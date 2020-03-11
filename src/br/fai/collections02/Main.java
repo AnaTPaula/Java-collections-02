@@ -13,21 +13,34 @@ public class Main {
 	}
 	
 	private Map<String, String> mapa = new HashMap <String, String>();
+	//private Map<String, String> mapa = null;
 
 	private void start() {
 		adicionarItensNoMapa();
 		exibirValorNoMapaPelaChave("SRS");
+		exibirValorNoMapaPelaChave("VALOR QUE NÃO EXISTE");
 		iterarMapa();
 		
 		
 	}
 
 	private void adicionarItensNoMapa() {
-		mapa.put("SRS", "Santa Rita do Sapucaí");
-		mapa.put("PA", "Pouso Alegre");	
-		mapa.put("ITA", "Itajubá");
-		mapa.put("ZORO", "Conceição dos Ouros");
-		mapa.put("CAXU", "Cachoeira de Minas");
+		
+		try {
+			mapa.put("SRS", "Santa Rita do Sapucaí");
+			mapa.put("PA", "Pouso Alegre");	
+			mapa.put("ITA", "Itajubá");
+			mapa.put("ZORO", "Conceição dos Ouros");
+			mapa.put("CAXU", "Cachoeira de Minas");
+			
+			System.out.println("Cheguei no fim do try");
+		} catch (Exception e)
+		{
+			System.out.println("Ocorreu uma exceção");
+		}finally {
+			System.out.println("Cheguei no finally");
+		}
+		
 		
 	}
 	
@@ -54,5 +67,10 @@ public class Main {
 		}
 			
 	}
+	
+	
+	
+	
+	
 	
 }
