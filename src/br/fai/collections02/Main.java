@@ -17,7 +17,7 @@ public class Main {
 	private void start() {
 		adicionarItensNoMapa();
 		exibirValorNoMapaPelaChave("SRS");
-		exibirValorNoMapaPelaChave("PA");
+		iterarMapa();
 		
 		
 	}
@@ -43,4 +43,16 @@ public class Main {
 	    + mapa.get(chave));
 	}
   }
+	
+	private void iterarMapa() {
+		
+		System.out.println("-----------------");
+		
+		for(String chave: mapa.keySet())
+		{
+			System.out.println("Chave: " + chave + " | Valor: " + mapa.get(chave));
+		}
+			
+	}
+	
 }
